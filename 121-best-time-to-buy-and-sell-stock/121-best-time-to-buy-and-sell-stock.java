@@ -19,9 +19,6 @@ class Solution {
             profit=Math.max(profit,prices[max]-prices[min]);
               
         }
-        //System.out.println(min);
-        //System.out.println(max);
-        int out=prices[max]-prices[min];
         return profit;
     }
 }
