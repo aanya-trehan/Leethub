@@ -21,29 +21,19 @@
 class Solution {
     public List<Integer> preorderTraversal(TreeNode root) {
         
-        List<Integer> ans = new ArrayList<Integer>();
-        
-        if (root == null)
-        {
-            return ans;
-        }
-        
-        Stack<TreeNode> stack = new Stack<TreeNode>();
-        stack.push(root);
-        
-        while (!stack.isEmpty()){
-            TreeNode current = stack.pop();
-            ans.add(current.val);
-            
-            //we are pushing right value first and then left so that in next iteration left value is pops out first
-            if (current.right != null)
-            {
+        Stack<TreeNode> stack = new Stack<>();
+        List<Integer> list = new ArrayList<>();
+        TreeNode current = root;
+        while(!stack.isEmpty() || current != null){
+            while(current != null){
+                list.add(current.val);
                 stack.push(current.right);
+                current = current.left;
             }
-            if (current.left != null) {
-                stack.push(current.left);
+            if(!stack.isEmpty()){
+            current = stack.pop();
             }
         }
-        return ans;
+        return list;
     }
 }
