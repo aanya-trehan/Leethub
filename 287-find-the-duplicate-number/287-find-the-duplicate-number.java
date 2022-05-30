@@ -21,7 +21,7 @@ class Solution {
 // TC- O(N)
 //Space Complexity: O(N), as we are using extra space for frequency array.
 
-    public int findDuplicateBetter(int[] nums) {
+    public int findDuplicate(int[] nums) {
         int[] arr= new int[nums.length];
          for(int i:nums){
              if (arr[i]==1){
@@ -38,7 +38,7 @@ class Solution {
 //TC: O(N). Since we traversed through the array only once.
 //Space complexity: O(1).    
     
-    public int findDuplicate(int[] nums) {
+    public int findDuplicateBest(int[] nums) {
         int slow=nums[0];
         int fast=nums[0];
         slow=nums[slow];
