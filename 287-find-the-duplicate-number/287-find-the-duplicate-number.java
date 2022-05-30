@@ -5,7 +5,7 @@ class Solution {
 // TC-O(Nlogn + N) Nlogn for sort, N for linear search
 //Space-O(1)
     
-    public int findDuplicateNaive(int[] nums) {
+    public int findDuplicate(int[] nums) {
         Arrays.sort(nums);
         for(int i=0;i<nums.length-1;i++){
             if (nums[i]==nums[i+1]){
@@ -21,7 +21,7 @@ class Solution {
 // TC- O(N)
 //Space Complexity: O(N), as we are using extra space for frequency array.
 
-    public int findDuplicate(int[] nums) {
+    public int findDuplicateBetter(int[] nums) {
         int[] arr= new int[nums.length];
          for(int i:nums){
              if (arr[i]==1){
