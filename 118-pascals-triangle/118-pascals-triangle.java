@@ -8,7 +8,7 @@ class Solution {
             curr_row= new ArrayList<>();
             curr_row.add(1);
             for(int j=1;j<i+1;j++){
-                if (i==j | j==0){
+                if (i==j){
                     curr_row.add(1);
                 }
                 else{
