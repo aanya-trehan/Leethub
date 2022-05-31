@@ -30,7 +30,7 @@ class Solution {
   }   
     
     //BETTER
-    public void setZeroesBetter(int[][] matrix) {
+    public void setZeroes(int[][] matrix) {
         int rows=matrix.length;
         int cols=matrix[0].length;
         int[] dummyrow=new int[rows];
@@ -55,7 +55,7 @@ class Solution {
     }
     
     //BEST
-     public void setZeroes(int[][] matrix) {
+     public void setZeroesBest(int[][] matrix) {
         int col1=1;
         int rows=matrix.length;
         int cols=matrix[0].length;
