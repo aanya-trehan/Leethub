@@ -1,14 +1,49 @@
 class Solution {
     public String reverseWords(String s) {
-        s=s.replaceAll("\\s+"," ").trim();
-        String ans="";
-        String[] str=s.split(" ");
-        for(int i=0;i<str.length/2;i++){
-            String temp=str[i];
-            str[i]=str[str.length-i-1];
-            str[str.length-i-1]=temp;
-        }
-        return String.join(" ",str);
-    }
-    
+    s=s.replaceAll("\\s+"," ").trim();
+	int left = 0;
+	int right = s.length() - 1;
+
+	String temp = "";
+	String ans = "";
+
+	//Iterate the string and keep on adding to form a word
+	//If empty space is encountered then add the current word to the result
+	while (left <= right)
+	{
+		char ch = s.charAt(left);
+		if (ch != ' ')
+		{
+			temp += ch;
+		}
+		else if (ch == ' ')
+		{
+			if (!ans.equals(""))
+			{
+				ans = temp + " " + ans;
+			}
+			else
+			{
+				ans = temp;
+			}
+			temp = "";
+		}
+		left++;
+	}
+
+	//If not empty string then add to the result(Last word is added)
+	if (!temp.equals(""))
+	{
+		if (!ans.equals(""))
+		{
+			ans = temp + " " + ans;
+		}
+		else
+		{
+			ans = temp;
+		}
+	}
+
+	return ans;
+}
 }
