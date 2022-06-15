@@ -9,7 +9,7 @@
  * }
  */
 class Solution {
-    public ListNode reverseList(ListNode head) {
+    public ListNode reverseList1(ListNode head) {
         ListNode current=head; //1
         ListNode previous=null; 
         ListNode next=null; //2
@@ -22,5 +22,16 @@ class Solution {
         return previous;
     }
     
-
+    public ListNode reverseList(ListNode head) {
+        ListNode current=head;
+        ListNode prev=null;
+        ListNode next=null;
+        while(current!=null){
+            next=current.next;
+            current.next=prev;
+            prev=current;
+            current=next;
+        }
+        return prev;
+    }
 }
