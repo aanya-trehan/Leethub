@@ -11,11 +11,11 @@ class Solution {
 
                     int up = grid[i][j];
                     if(i>0) up += dp[i-1][j];
-                    else up += (int)Math.pow(10,9);
+                    else up += 1000000;
 
                     int left = grid[i][j];
                     if(j>0) left+=dp[i][j-1];
-                    else left += (int)Math.pow(10,9);
+                    else left += 1000000;
 
                     dp[i][j] = Math.min(up,left);
                 }
