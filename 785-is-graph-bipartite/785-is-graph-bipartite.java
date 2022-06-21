@@ -3,10 +3,13 @@ class Solution {
         int[] colours=new int[graph.length];
         for(int i=0;i<graph.length;i++){
             if(colours[i]==0){
-                if(bfs(graph,colours,i)==false){
+                // if(bfs(graph,colours,i)==false){
+                //     return false;
+                // }
+            }
+            if(dfs(graph,colours,i)==false){
                     return false;
                 }
-            }
         }
         return true;
     }
@@ -29,4 +32,20 @@ class Solution {
         }
         return true;
     }
+    
+     public boolean dfs(int[][] graph, int[] colour, int node){
+         if(colour[node]==0)colour[node]=1;
+         for(int it:graph[node]){
+             if(colour[it]==0){
+                 colour[it]=-colour[node];
+                 if(!dfs(graph,colour,it)){
+                     return false;
+                 }
+             }
+             else if(colour[it]!=-colour[node]){
+                 return false;
+             }
+         }
+         return true;
+     }
 }
